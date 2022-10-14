@@ -8,3 +8,14 @@ C:\Users\molnarviktor\source\repos\amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.Gene
 C:\Users\molnarviktor\source\repos\amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.CoreCompileInputs.cache
 C:\Users\molnarviktor\source\repos\amuba\Amuba\Amuba\obj\Debug\Amuba.exe
 C:\Users\molnarviktor\source\repos\amuba\Amuba\Amuba\obj\Debug\Amuba.pdb
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\bin\Debug\Amuba.exe.config
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\bin\Debug\Amuba.exe
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\bin\Debug\Amuba.pdb
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.csprojAssemblyReference.cache
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.Form1.resources
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.Menu.resources
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.Properties.Resources.resources
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.GenerateResource.cache
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.CoreCompileInputs.cache
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.exe
+C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.pdb

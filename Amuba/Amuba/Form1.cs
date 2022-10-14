@@ -38,6 +38,11 @@ namespace Amuba
             return new Point(MousePosition.X - this.Location.X - 8, MousePosition.Y - this.Location.Y - 38);
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
 

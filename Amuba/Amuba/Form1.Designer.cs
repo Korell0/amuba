@@ -30,8 +30,9 @@ namespace Amuba
         private void InitializeComponent()
         {
             this.Rules = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Leiras = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Rules.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,9 +47,20 @@ namespace Amuba
             this.Rules.Text = "Játékszabályok:";
             this.Rules.Visible = false;
             // 
+            // Leiras
+            // 
+            this.Leiras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Leiras.Location = new System.Drawing.Point(6, 16);
+            this.Leiras.Name = "Leiras";
+            this.Leiras.Size = new System.Drawing.Size(188, 129);
+            this.Leiras.TabIndex = 0;
+            this.Leiras.Text = "Két játékos játszik egy 10x10-es pályán.\r\n\r\nA cél kirakni 5 egybefüggő szimbólumo" +
+    "t.\r\n\r\namelyik játékos ezt előbb eléri az nyer.\r\n";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Help;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(753, 9);
@@ -60,21 +72,20 @@ namespace Amuba
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
-            // Leiras
+            // panel1
             // 
-            this.Leiras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Leiras.Location = new System.Drawing.Point(6, 16);
-            this.Leiras.Name = "Leiras";
-            this.Leiras.Size = new System.Drawing.Size(188, 129);
-            this.Leiras.TabIndex = 0;
-            this.Leiras.Text = "Két játékos játszik egy 10x10-es pályán.\r\n\r\nA cél kirakni 5 egybefüggő szimbólumo" +
-    "t.\r\n\r\namelyik játékos ezt előbb eléri az nyer.\r\n";
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Location = new System.Drawing.Point(148, 139);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(127, 59);
+            this.panel1.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Rules);
             this.Name = "Form1";
@@ -90,6 +101,7 @@ namespace Amuba
         private System.Windows.Forms.GroupBox Rules;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Leiras;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
