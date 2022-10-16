@@ -31,15 +31,18 @@ namespace Amuba
         {
             this.Rules = new System.Windows.Forms.GroupBox();
             this.Leiras = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.infoLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.JelenlegiPBox = new System.Windows.Forms.PictureBox();
+            this.nextLabel = new System.Windows.Forms.Label();
             this.Rules.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.JelenlegiPBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Rules
             // 
             this.Rules.Controls.Add(this.Leiras);
-            this.Rules.Location = new System.Drawing.Point(537, 21);
+            this.Rules.Location = new System.Drawing.Point(30, 10);
             this.Rules.Name = "Rules";
             this.Rules.Size = new System.Drawing.Size(200, 149);
             this.Rules.TabIndex = 0;
@@ -57,40 +60,68 @@ namespace Amuba
             this.Leiras.Text = "Két játékos játszik egy 10x10-es pályán.\r\n\r\nA cél kirakni 5 egybefüggő szimbólumo" +
     "t.\r\n\r\namelyik játékos ezt előbb eléri az nyer.\r\n";
             // 
-            // label1
+            // infoLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Help;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(753, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "?";
-            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
-            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.Cursor = System.Windows.Forms.Cursors.Help;
+            this.infoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.infoLabel.ForeColor = System.Drawing.Color.Red;
+            this.infoLabel.Location = new System.Drawing.Point(1150, 10);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(24, 25);
+            this.infoLabel.TabIndex = 3;
+            this.infoLabel.Text = "?";
+            this.infoLabel.MouseEnter += new System.EventHandler(this.infoLabel_MouseEnter);
+            this.infoLabel.MouseLeave += new System.EventHandler(this.infoLabel_MouseLeave);
+            this.infoLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.infoLabel_MouseMove);
             // 
-            // panel1
+            // groupBox1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Location = new System.Drawing.Point(148, 139);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(127, 59);
-            this.panel1.TabIndex = 2;
+            this.groupBox1.Location = new System.Drawing.Point(2, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(22, 662);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Visible = false;
+            // 
+            // JelenlegiPBox
+            // 
+            this.JelenlegiPBox.Location = new System.Drawing.Point(874, 260);
+            this.JelenlegiPBox.Name = "JelenlegiPBox";
+            this.JelenlegiPBox.Size = new System.Drawing.Size(150, 150);
+            this.JelenlegiPBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.JelenlegiPBox.TabIndex = 5;
+            this.JelenlegiPBox.TabStop = false;
+            // 
+            // nextLabel
+            // 
+            this.nextLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nextLabel.Location = new System.Drawing.Point(874, 200);
+            this.nextLabel.Name = "nextLabel";
+            this.nextLabel.Size = new System.Drawing.Size(150, 57);
+            this.nextLabel.TabIndex = 6;
+            this.nextLabel.Text = "label1";
+            this.nextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.nextLabel);
+            this.Controls.Add(this.JelenlegiPBox);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.Rules);
+            this.MaximumSize = new System.Drawing.Size(1200, 700);
+            this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Rules.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.JelenlegiPBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,9 +130,11 @@ namespace Amuba
         #endregion
 
         private System.Windows.Forms.GroupBox Rules;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Leiras;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label infoLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox JelenlegiPBox;
+        private System.Windows.Forms.Label nextLabel;
     }
 }
 

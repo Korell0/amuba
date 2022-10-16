@@ -12,6 +12,7 @@ namespace Amuba
 {
     public partial class Menu : Form
     {
+        static List<TextBox> jatekosnevek = new List<TextBox>();
         public Menu()
         {
             InitializeComponent();
@@ -24,25 +25,28 @@ namespace Amuba
 
         private void Player_s(int number)
         {
-            List<TextBox> jatekosokneve = new List<TextBox>();
             for (int i = 0; i < number; i++)
             {
                 Label ujlabel = new Label();
-                ujlabel.Text = $"Player {i+1} name";
+                ujlabel.Text = $"Player {(number == 1 ? "" : (i + 1).ToString() + " ")}Name: ";
                 ujlabel.Name = $"player{i + 1}";
-                ujlabel.Location = new Point(30, 40 + i * (ujlabel.Height + 30));
+                ujlabel.AutoSize = true;
                 this.Controls.Add(ujlabel);
 
                 TextBox ujtextbox = new TextBox();
-                ujtextbox.Name = $"player{i + 1}";
-                ujtextbox.Location = new Point(ujlabel.Width+30, 40 + i * (ujlabel.Height + 30));
+                ujtextbox.Text = $"Player{i + 1}";
                 this.Controls.Add(ujtextbox);
 
+                int xHelyzet = this.Width / 2 - (ujlabel.Width + ujtextbox.Width) / 2 - 30;
+                int yHelyzet = (this.Height - (ujlabel.Height * number + (number - 1) * 30)) / 2 + (i * (30 + ujlabel.Height)) - 26;
+                ujlabel.Location = new Point(xHelyzet, yHelyzet);
+                ujtextbox.Location = new Point(ujlabel.Width + ujlabel.Location.X, ujlabel.Location.Y - 3);
+
+                jatekosnevek.Add(ujtextbox);
             }
-            button1.Visible = true;
+            startBtn.Visible = true;
             oneplayer.Visible = false;
             twoplayer.Visible = false;
-
         }
 
         private void twoplayer_Click(object sender, EventArgs e)
@@ -50,9 +54,14 @@ namespace Amuba
             Player_s(2);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void startBtn_Click(object sender, EventArgs e)
         {
-            new Form1().Show();
+            List<string> nevek = new List<string>();
+            foreach (TextBox item in jatekosnevek)
+            {
+                nevek.Add(item.Text);
+            }
+            new Form1(nevek.Count > 1 && new Random().Next(0, 2) > 0 ? new List<string> { nevek[1], nevek[0] } : nevek).Show();
             this.Hide();
         }
     }
