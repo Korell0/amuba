@@ -73,6 +73,147 @@ namespace Amuba
         private void Kep_Click(object sender, EventArgs e)
         {
             Jelenleg();
+            Winchek();
+        }
+
+        private void Winchek()
+        {
+            for (int sor = 0; sor < Palya.GetLength(0); sor++)
+            {
+                for (int oszlop = 0; oszlop < Palya.GetLength(1); oszlop++)
+                {
+                    if (Palya[sor,oszlop].Ertek!="")
+                    {
+                        if (Vizszintes(sor, oszlop) ||
+                            Fuggoleges(sor, oszlop) ||
+                            Shrejobbra(sor, oszlop) ||
+                            Shrebalra(sor, oszlop))
+                        {
+                            MessageBox.Show($"A győztes:\n{jatekosok.Find(x => x.Jel == Palya[sor, oszlop].Ertek).Nev}\n Szeretnél újra játszani?", "Győzelem", MessageBoxButtons.YesNo);
+                            ClearMap();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ClearMap()
+        {
+            for (int sor = 0; sor < Palya.GetLength(0); sor++)
+            {
+                for (int oszlop = 0; oszlop < Palya.GetLength(1); oszlop++)
+                {
+                    Palya[sor, oszlop].Kep.Image = null;
+                    Palya[sor, oszlop].Szabad = true;
+                    Palya[sor, oszlop].Ertek = "";
+                }
+            }
+        }
+
+        private bool Shrebalra(int sor, int oszlop)
+        {
+            int iterate = 0;
+
+            for (int row = sor; row < Palya.GetLength(0); row++)
+            {
+                for (int column = oszlop; column >= 0; column--)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (sor + i == row && oszlop - i == column)
+                        {
+                            if (Palya[sor, oszlop].Ertek == Palya[row, column].Ertek)
+                            {
+                                iterate++;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                            if (iterate > 4)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+
+        }
+
+        private bool Shrejobbra(int sor, int oszlop)
+        {
+            int iterate = 0;
+
+            for (int row = sor; row < Palya.GetLength(0); row++)
+            {
+                for (int column = oszlop; column < Palya.GetLength(1); column++)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (sor + i == row && oszlop + i == column)
+                        {
+                            if (Palya[sor, oszlop].Ertek == Palya[row, column].Ertek)
+                            {
+                                iterate++;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                            if (iterate > 4)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+
+        }
+
+        private bool Fuggoleges(int sor, int oszlop)
+        {
+            int iterate = 0;
+            for (int row = sor; row < Palya.GetLength(1); row++)
+            {
+                if (Palya[sor, oszlop].Ertek == Palya[row, oszlop].Ertek)
+                {
+                    iterate++;
+                }
+                else
+                {
+                    return false;
+                }
+                if (iterate > 4)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool Vizszintes(int sor, int oszlop)
+        {
+            int iterate = 0;
+            for (int column = oszlop; column < Palya.GetLength(1); column++)
+            {
+                if (Palya[sor,oszlop].Ertek == Palya[sor, column].Ertek)
+                {
+                    iterate++;
+                }
+                else
+                {
+                    return false;
+                }
+                if (iterate > 4)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private Point RelMousPoz()
