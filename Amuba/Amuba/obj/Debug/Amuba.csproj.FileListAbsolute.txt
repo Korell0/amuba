@@ -19,3 +19,14 @@ C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.G
 C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.CoreCompileInputs.cache
 C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.exe
 C:\Users\korsosadam.TURR\Source\Repos\amuba\Amuba\Amuba\obj\Debug\Amuba.pdb
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\bin\Debug\Amuba.exe.config
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\bin\Debug\Amuba.exe
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\bin\Debug\Amuba.pdb
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.AssemblyReference.cache
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.Form1.resources
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.Menu.resources
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.Properties.Resources.resources
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.GenerateResource.cache
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.CoreCompileInputs.cache
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.exe
+D:\Tananyag\Aszalk\Amuba\Amuba\Amuba\obj\Debug\Amuba.pdb

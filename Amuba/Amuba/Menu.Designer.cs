@@ -31,7 +31,7 @@ namespace Amuba
         {
             this.twoplayer = new System.Windows.Forms.Button();
             this.oneplayer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // twoplayer
@@ -54,28 +54,29 @@ namespace Amuba
             this.oneplayer.UseVisualStyleBackColor = true;
             this.oneplayer.Click += new System.EventHandler(this.oneplayer_Click);
             // 
-            // button1
+            // startBtn
             // 
-            this.button1.Location = new System.Drawing.Point(250, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "START";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.startBtn.Location = new System.Drawing.Point(250, 50);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(75, 50);
+            this.startBtn.TabIndex = 3;
+            this.startBtn.Text = "START";
+            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Visible = false;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 161);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.startBtn);
             this.Controls.Add(this.oneplayer);
             this.Controls.Add(this.twoplayer);
             this.MaximumSize = new System.Drawing.Size(350, 200);
             this.MinimumSize = new System.Drawing.Size(350, 200);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ResumeLayout(false);
 
@@ -84,6 +85,6 @@ namespace Amuba
         #endregion
         private System.Windows.Forms.Button twoplayer;
         private System.Windows.Forms.Button oneplayer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startBtn;
     }
 }
