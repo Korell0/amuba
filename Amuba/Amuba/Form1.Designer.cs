@@ -119,7 +119,7 @@ namespace Amuba
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Aműba";
             this.Rules.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.JelenlegiPBox)).EndInit();
             this.ResumeLayout(false);

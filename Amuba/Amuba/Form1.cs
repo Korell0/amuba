@@ -12,9 +12,11 @@ namespace Amuba
 {
     public sealed partial class Form1 : Form
     {
+        static int palyameret = 10;
+        static int towin = 5;
         static List<Jatekos> jatekosok = new List<Jatekos>();
         static Jatekos jatekos;
-        static Mezo[,] Palya = new Mezo[10,10];
+        static Mezo[,] Palya = new Mezo[palyameret,palyameret];
         public Form1(List<string> nevek)
         {
             InitializeComponent();
@@ -118,7 +120,7 @@ namespace Amuba
             {
                 for (int column = oszlop; column >= 0; column--)
                 {
-                    for (int i = 0; i < 5; i++)
+                    for (int i = 0; i < towin-1+1; i++)
                     {
                         if (sor + i == row && oszlop - i == column)
                         {
@@ -130,7 +132,7 @@ namespace Amuba
                             {
                                 return false;
                             }
-                            if (iterate > 4)
+                            if (iterate > towin-1)
                             {
                                 return true;
                             }
@@ -150,7 +152,7 @@ namespace Amuba
             {
                 for (int column = oszlop; column < Palya.GetLength(1); column++)
                 {
-                    for (int i = 0; i < 5; i++)
+                    for (int i = 0; i < towin-1+1; i++)
                     {
                         if (sor + i == row && oszlop + i == column)
                         {
@@ -162,7 +164,7 @@ namespace Amuba
                             {
                                 return false;
                             }
-                            if (iterate > 4)
+                            if (iterate > towin-1)
                             {
                                 return true;
                             }
@@ -187,7 +189,7 @@ namespace Amuba
                 {
                     return false;
                 }
-                if (iterate > 4)
+                if (iterate > towin-1)
                 {
                     return true;
                 }
@@ -208,7 +210,7 @@ namespace Amuba
                 {
                     return false;
                 }
-                if (iterate > 4)
+                if (iterate > towin-1)
                 {
                     return true;
                 }
