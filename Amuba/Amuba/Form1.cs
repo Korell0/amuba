@@ -29,7 +29,7 @@ namespace Amuba
         {
             if (nevek.Count == 1)
             {
-                jatekosok.Add(new Jatekos("Artificial Intelligence", jatekosok.Count == 0 ? "X" : "O"));
+                jatekosok.Add(new Jatekos("Artificial Intelligence", jatekosok.Count == 0 ? "X" : "O")); // így az X kezd!!!!4444négy
             }
             foreach (string nev in nevek)
             {
@@ -37,6 +37,8 @@ namespace Amuba
             }
             jatekos = jatekosok[0];
             Jelenleg();
+            player1Label.Text = $"{jatekosok[0].Nev}   -   {jatekosok[0].Pont}";
+            player2Label.Text = $"{jatekosok[1].Pont}   -   {jatekosok[1].Nev}";
         }
 
         private void Jelenleg()
@@ -49,6 +51,11 @@ namespace Amuba
         {
             jatekos = jatekosok.Find(x => x.Jel != jatekos.Jel);
             return jatekos.Jel;
+        }
+
+        public static string Elonezet()
+        {
+            return jatekosok.Find(x => x.Jel != jatekos.Jel).Jel;
         }
 
         private void GenerateMap()
@@ -75,31 +82,44 @@ namespace Amuba
         private void Kep_Click(object sender, EventArgs e)
         {
             Jelenleg();
-            Winchek();
+            Endcheck();
         }
 
-        private void Winchek()
+        private void Endcheck()
         {
+            int feltoltve = 0;
             for (int sor = 0; sor < Palya.GetLength(0); sor++)
             {
                 for (int oszlop = 0; oszlop < Palya.GetLength(1); oszlop++)
                 {
                     if (Palya[sor,oszlop].Ertek!="")
                     {
+                        feltoltve++;
                         if (Vizszintes(sor, oszlop) ||
                             Fuggoleges(sor, oszlop) ||
                             Shrejobbra(sor, oszlop) ||
                             Shrebalra(sor, oszlop))
                         {
-                            MessageBox.Show($"A győztes:\n{jatekosok.Find(x => x.Jel == Palya[sor, oszlop].Ertek).Nev}\n Szeretnél újra játszani?", "Győzelem", MessageBoxButtons.YesNo);
-                            ClearMap();
+                            if (DialogResult.No == MessageBox.Show($"A győztes:\n{jatekosok.Find(x => x.Jel == Palya[sor, oszlop].Ertek).Nev}\n Szeretnél újra játszani?", "Győzelem", MessageBoxButtons.YesNo))
+                            {
+                                Application.Exit();
+                            }
+                            ClearMap(jatekosok.Find(x => x.Jel == Palya[sor, oszlop].Ertek), 1);
                         }
                     }
                 }
             }
+            if (feltoltve == Math.Pow(palyameret, 2))
+            {
+                if (DialogResult.No == MessageBox.Show($"A pálya megtelt!\n Szeretnél újra játszani?", "Döntetlen", MessageBoxButtons.YesNo))
+                {
+                    Application.Exit();
+                }
+                ClearMap(jatekos, 0);
+            }
         }
 
-        private void ClearMap()
+        private void ClearMap(Jatekos gyoztes, int i)
         {
             for (int sor = 0; sor < Palya.GetLength(0); sor++)
             {
@@ -108,8 +128,12 @@ namespace Amuba
                     Palya[sor, oszlop].Kep.Image = null;
                     Palya[sor, oszlop].Szabad = true;
                     Palya[sor, oszlop].Ertek = "";
+                    Palya[sor, oszlop].Kep.BorderStyle = BorderStyle.FixedSingle;
                 }
             }
+            gyoztes.Pont += i;
+            player1Label.Text = $"{jatekosok[0].Nev}   -   {jatekosok[0].Pont}";
+            player2Label.Text = $"{jatekosok[1].Pont}   -   {jatekosok[1].Nev}";
         }
 
         private bool Shrebalra(int sor, int oszlop)
@@ -242,6 +266,15 @@ namespace Amuba
         {
             Rules.Location = new Point(RelMousPoz().X - 10 - Rules.Width, RelMousPoz().Y);
             Rules.BringToFront();
+        }
+
+        private void Felad_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.No == MessageBox.Show($"A győztes:\n{jatekosok.Find(x => x.Jel == jatekos.Jel).Nev}\n Szeretnél újra játszani?", "Győzelem", MessageBoxButtons.YesNo))
+            {
+                Application.Exit();
+            }
+            ClearMap(jatekosok.Find(x => x.Jel == jatekos.Jel), 1);
         }
     }
 }

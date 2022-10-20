@@ -32,20 +32,25 @@ namespace Amuba
 
             Kep.Name = Form1.Aktiv();
             Kep.Click += delegate (object sender, EventArgs e) { Kep_Click(sender, e, Szabad ? Form1.Aktiv() : null); };
-            Kep.MouseEnter += Hover;
+            Kep.MouseEnter += delegate (object sender, EventArgs e) { Hover(sender, e, Szabad ? Form1.Elonezet() : null); };
             Kep.MouseLeave += Normalize;
         }
 
         private void Normalize(object sender, EventArgs e)
         {
             Kep.BackColor = Color.White;
+            if (Szabad)
+            {
+                Kep.Image = null;
+            }
         }
 
-        private void Hover(object sender, EventArgs e)
+        private void Hover(object sender, EventArgs e, string name)
         {
             if (Szabad)
             {
                 Kep.BackColor = Color.FromArgb(100, 199, 199, 199);
+                Kep.Image = Image.FromFile($"{name}_transparent.png");
             }
         }
 

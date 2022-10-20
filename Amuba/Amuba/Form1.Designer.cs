@@ -35,6 +35,10 @@ namespace Amuba
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.JelenlegiPBox = new System.Windows.Forms.PictureBox();
             this.nextLabel = new System.Windows.Forms.Label();
+            this.Felad = new System.Windows.Forms.Button();
+            this.player1Label = new System.Windows.Forms.Label();
+            this.player2Label = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Rules.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JelenlegiPBox)).BeginInit();
             this.SuspendLayout();
@@ -105,11 +109,56 @@ namespace Amuba
             this.nextLabel.Text = "label1";
             this.nextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Felad
+            // 
+            this.Felad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Felad.Location = new System.Drawing.Point(900, 416);
+            this.Felad.Name = "Felad";
+            this.Felad.Size = new System.Drawing.Size(100, 40);
+            this.Felad.TabIndex = 7;
+            this.Felad.Text = "Feladom";
+            this.Felad.UseVisualStyleBackColor = true;
+            this.Felad.Click += new System.EventHandler(this.Felad_Click);
+            // 
+            // player1Label
+            // 
+            this.player1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.player1Label.Location = new System.Drawing.Point(740, 7);
+            this.player1Label.Name = "player1Label";
+            this.player1Label.Size = new System.Drawing.Size(196, 35);
+            this.player1Label.TabIndex = 8;
+            this.player1Label.Text = "player1Label";
+            this.player1Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // player2Label
+            // 
+            this.player2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.player2Label.Location = new System.Drawing.Point(960, 7);
+            this.player2Label.Name = "player2Label";
+            this.player2Label.Size = new System.Drawing.Size(184, 35);
+            this.player2Label.TabIndex = 9;
+            this.player2Label.Text = "player2Label";
+            this.player2Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(942, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(12, 18);
+            this.label1.TabIndex = 10;
+            this.label1.Text = ":";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.player2Label);
+            this.Controls.Add(this.player1Label);
+            this.Controls.Add(this.Felad);
             this.Controls.Add(this.nextLabel);
             this.Controls.Add(this.JelenlegiPBox);
             this.Controls.Add(this.groupBox1);
@@ -119,7 +168,7 @@ namespace Amuba
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aműba";
+            this.Text = "Amőba";
             this.Rules.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.JelenlegiPBox)).EndInit();
             this.ResumeLayout(false);
@@ -135,6 +184,10 @@ namespace Amuba
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox JelenlegiPBox;
         private System.Windows.Forms.Label nextLabel;
+        private System.Windows.Forms.Button Felad;
+        private System.Windows.Forms.Label player1Label;
+        private System.Windows.Forms.Label player2Label;
+        private System.Windows.Forms.Label label1;
     }
 }
 
