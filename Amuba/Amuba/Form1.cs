@@ -30,11 +30,11 @@ namespace Amuba
         {
             if (nevek.Count == 1)
             {
-                jatekosok.Add(new Jatekos("Artificial Intelligence", jatekosok.Count == 0 ? "X" : "O")); // így az X kezd!!!!4444négy
+                jatekosok.Add(new Jatekos("Artificial Intelligence", jatekosok.Count == 0 ? "O" : "X")); // így az X kezd!!!!4444négy
             }
             foreach (string nev in nevek)
             {
-                jatekosok.Add(new Jatekos(nev, jatekosok.Count == 0 ? "X" : "O")); // így az X kezd!!!!4444négy
+                jatekosok.Add(new Jatekos(nev, jatekosok.Count == 0 ? "O" : "X")); // így az X kezd!!!!4444négy
             }
             jatekos = jatekosok[0];
             Jelenleg();
@@ -101,11 +101,12 @@ namespace Amuba
                             Shrejobbra(sor, oszlop) ||
                             Shrebalra(sor, oszlop))
                         {
+                            jatekosok.Find(x => x.Jel == Palya[sor, oszlop].Ertek).Pont++;
                             if (DialogResult.No == MessageBox.Show($"A győztes:\n{jatekosok.Find(x => x.Jel == Palya[sor, oszlop].Ertek).Nev}\n Szeretnél újra játszani?", "Győzelem", MessageBoxButtons.YesNo))
                             {
                                 Application.Exit();
                             }
-                            ClearMap(jatekosok.Find(x => x.Jel == Palya[sor, oszlop].Ertek), 1);
+                            ClearMap();
                         }
                     }
                 }
@@ -116,11 +117,11 @@ namespace Amuba
                 {
                     Application.Exit();
                 }
-                ClearMap(jatekos, 0);
+                ClearMap();
             }
         }
 
-        private void ClearMap(Jatekos gyoztes, int i)
+        private void ClearMap()
         {
             for (int sor = 0; sor < Palya.GetLength(0); sor++)
             {
@@ -132,7 +133,6 @@ namespace Amuba
                     Palya[sor, oszlop].Kep.BorderStyle = BorderStyle.FixedSingle;
                 }
             }
-            gyoztes.Pont += i;
             player1Label.Text = $"{jatekosok[0].Nev}   -   {jatekosok[0].Pont}";
             player2Label.Text = $"{jatekosok[1].Pont}   -   {jatekosok[1].Nev}";
         }
@@ -272,11 +272,12 @@ namespace Amuba
 
         private void Felad_Click(object sender, EventArgs e)
         {
+            jatekosok.Find(x => x.Jel == jatekos.Jel).Pont++;
             if (DialogResult.No == MessageBox.Show($"A győztes:\n{jatekosok.Find(x => x.Jel == jatekos.Jel).Nev}\n Szeretnél újra játszani?", "Győzelem", MessageBoxButtons.YesNo))
             {
                 Application.Exit();
             }
-            ClearMap(jatekosok.Find(x => x.Jel == jatekos.Jel), 1);
+            ClearMap();
         }
 
         private void Mentes()
@@ -286,8 +287,8 @@ namespace Amuba
                 if (DialogResult.Yes == MessageBox.Show("Szeretnéd menteni az eredményeket?", "Mentés", MessageBoxButtons.YesNo))
                 {
                     FileIO.EredmenyekMentese(jatekosok);
-                    kilepes = true;
                 }
+                kilepes = true;
             }
         }
     }
