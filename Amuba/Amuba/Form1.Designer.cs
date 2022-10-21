@@ -123,22 +123,21 @@ namespace Amuba
             // player1Label
             // 
             this.player1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.player1Label.Location = new System.Drawing.Point(740, 7);
+            this.player1Label.Location = new System.Drawing.Point(740, 15);
             this.player1Label.Name = "player1Label";
-            this.player1Label.Size = new System.Drawing.Size(196, 35);
+            this.player1Label.Size = new System.Drawing.Size(196, 80);
             this.player1Label.TabIndex = 8;
             this.player1Label.Text = "player1Label";
-            this.player1Label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.player1Label.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // player2Label
             // 
             this.player2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.player2Label.Location = new System.Drawing.Point(960, 7);
+            this.player2Label.Location = new System.Drawing.Point(960, 15);
             this.player2Label.Name = "player2Label";
-            this.player2Label.Size = new System.Drawing.Size(184, 35);
+            this.player2Label.Size = new System.Drawing.Size(184, 80);
             this.player2Label.TabIndex = 9;
             this.player2Label.Text = "player2Label";
-            this.player2Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 

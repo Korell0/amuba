@@ -41,3 +41,14 @@ D:\BG\Amubaú\Amuba\Amuba\obj\Debug\Amuba.csproj.GenerateResource.cache
 D:\BG\Amubaú\Amuba\Amuba\obj\Debug\Amuba.csproj.CoreCompileInputs.cache
 D:\BG\Amubaú\Amuba\Amuba\obj\Debug\Amuba.exe
 D:\BG\Amubaú\Amuba\Amuba\obj\Debug\Amuba.pdb
+D:\BG\Amuba\Amuba\Amuba\bin\Debug\Amuba.exe.config
+D:\BG\Amuba\Amuba\Amuba\bin\Debug\Amuba.exe
+D:\BG\Amuba\Amuba\Amuba\bin\Debug\Amuba.pdb
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.AssemblyReference.cache
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.Form1.resources
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.Menu.resources
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.Properties.Resources.resources
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.GenerateResource.cache
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.csproj.CoreCompileInputs.cache
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.exe
+D:\BG\Amuba\Amuba\Amuba\obj\Debug\Amuba.pdb
