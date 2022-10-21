@@ -17,6 +17,7 @@ namespace Amuba
         static List<Jatekos> jatekosok = new List<Jatekos>();
         static Jatekos jatekos;
         static Mezo[,] Palya = new Mezo[palyameret,palyameret];
+        static bool kilepes = false;
         public Form1(List<string> nevek)
         {
             InitializeComponent();
@@ -249,6 +250,7 @@ namespace Amuba
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            Mentes();
             Application.Exit();
         }
 
@@ -275,6 +277,18 @@ namespace Amuba
                 Application.Exit();
             }
             ClearMap(jatekosok.Find(x => x.Jel == jatekos.Jel), 1);
+        }
+
+        private void Mentes()
+        {
+            if (!kilepes)
+            {
+                if (DialogResult.Yes == MessageBox.Show("Szeretnéd menteni az eredményeket?", "Mentés", MessageBoxButtons.YesNo))
+                {
+                    FileIO.EredmenyekMentese(jatekosok);
+                    kilepes = true;
+                }
+            }
         }
     }
 }
