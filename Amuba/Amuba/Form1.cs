@@ -144,7 +144,7 @@ namespace Amuba
             {
                 for (int column = oszlop; column >= 0; column--)
                 {
-                    for (int i = 0; i < towin-1+1; i++)
+                    for (int i = 0; i < towin; i++)
                     {
                         if (sor + i == row && oszlop - i == column)
                         {
@@ -176,7 +176,7 @@ namespace Amuba
             {
                 for (int column = oszlop; column < Palya.GetLength(1); column++)
                 {
-                    for (int i = 0; i < towin-1+1; i++)
+                    for (int i = 0; i < towin; i++)
                     {
                         if (sor + i == row && oszlop + i == column)
                         {
