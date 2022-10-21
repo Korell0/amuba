@@ -77,7 +77,7 @@ namespace Amuba
             this.MinimumSize = new System.Drawing.Size(350, 200);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "Menü";
             this.ResumeLayout(false);
 
         }
